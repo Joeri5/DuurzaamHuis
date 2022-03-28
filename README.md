@@ -1,5 +1,5 @@
 # BeroepsOpdracht Duurzaam Huis
-![Logo-White](https://user-images.githubusercontent.com/90683013/160500414-9f71ded4-c8d2-41b0-b80e-bc1acaa6b499.png)
+[<img src="https://user-images.githubusercontent.com/90683013/160500414-9f71ded4-c8d2-41b0-b80e-bc1acaa6b499.png">](https://duurzaam-huis-kupgx.ondigitalocean.app/) ^ Live Link
 
 >Team : 
 >>* **[Joeri](https://github.com/Joeri5)**

@@ -22,5 +22,6 @@
 >>|Firestore|@Maiky, @Joeri| 3 uur|
 >>|InlogSysteem|@Maiky|1 uur|
 >>|Data Ophalen uit firestore| @Maiky, @Ivar| 3 uur|
+>>|Responsive Maken|@Joeri, @Maiky, @Ivar| 1 uur|
 >>|Todo|Todo|Todo|
 >>

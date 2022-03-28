@@ -1,0 +1,3 @@
+.nav__inactive > img {
+    filter: invert(1);
+}

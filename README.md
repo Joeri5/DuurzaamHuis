@@ -16,7 +16,7 @@
 >> - [ ] Light Control met api
 >>
 >Taken :
->>|Taak |Persoon |Tijdsduur|
+>>|Taak |Personen |Tijdsduur|
 >>--- | --- | ---|
 >>|Frontend|@Joeri|5 uur|
 >>|Firestore|@Maiky, @Joeri| 3 uur|

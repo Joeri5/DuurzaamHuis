@@ -15,12 +15,12 @@
 >> - [ ] Calculator
 >> - [ ] Light Control met api
 >>
->|Taak |Persoon |Tijdsduur|
->--- | --- | ---|
->|Frontend|@Joeri|5 uur|
->|Firestore|@Maiky, @Joeri| 3 uur|
->|InlogSysteem|@Maiky|1 uur|
->|Data Ophalen uit firestore| @Maiky, @Ivar| 3 uur|
->|Todo|Todo|Todo|
-
----
+>Taken :
+>>|Taak |Persoon |Tijdsduur|
+>>--- | --- | ---|
+>>|Frontend|@Joeri|5 uur|
+>>|Firestore|@Maiky, @Joeri| 3 uur|
+>>|InlogSysteem|@Maiky|1 uur|
+>>|Data Ophalen uit firestore| @Maiky, @Ivar| 3 uur|
+>>|Todo|Todo|Todo|
+>>

@@ -2,28 +2,57 @@ import React from 'react';
 import PowerCard from "../components/PowerCard";
 import TempInsideCard from "../components/TempInsideCard";
 import TempOutsideCard from "../components/TempOutsideCard";
+import House from "../assets/house.png"
+import { Circle, Bed, Shower } from "@mui/icons-material";
 
 const DashboardPage = () => {
+
     return (
-        <div className="px-6">
-            <div className="py-12">
+        <div className="px-6 flex flex-col justify-evenly h-screen">
+            <div className="">
                 <h1 className="font-bold text-5xl">House Dashboard</h1>
                 <p className="font-normal text-gray-500 text-3xl">Welcome, Joeri!</p>
             </div>
-            <div className="flex justify-between pb-12">
-                <PowerCard />
-                <TempInsideCard />
-                <TempOutsideCard />
+            <div className="grid grid-cols-3  gap-x-5">
+                <PowerCard/>
+                <TempInsideCard/>
+                <TempOutsideCard/>
             </div>
             <div>
-                <p className="py-3 font-medium text-xl">Property</p>
+                <p className="justify-evenly font-medium text-xl">Property</p>
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2421.892840350995!2d4.746816415962091!3d52.62578057983442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47cf57cbba9605c9%3A0xe1ba0e9822efad39!2sLandstraat%2065%2C%201814%20BD%20Alkmaar!5e0!3m2!1snl!2snl!4v1648472388717!5m2!1snl!2snl"
-                    className="w-full h-52 rounded-3xl"
-                    allowFullScreen="true"
+                    src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_MAPS_API}&q=1814BD+Alkmaar,+Netherlands&zoom=18&maptype=roadmap`}
+                    className="w-full rounded-3xl h-64 my-5"
+                    allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer"
-                />
+                >
+                    
+                </iframe>
+                <div className="flex" style={{alignItems: "center"}}>
+                    <img className="md:w-20" src={House} alt="image of house"/>
+                    <div className="px-5 mr-64">
+                        <p className="font-semibold">Name of House</p>
+                        <p>Landstraat 65, 1814BD Alkmaar</p>
+                    </div>
+                    <div className="flex mr-96">
+                        <Circle fontSize={"normal"} htmlColor={"#87C754"} className="my-1.5 mx-2"/>
+                        <p className="font-light">active</p>
+                    </div>
+                    <div className="flex gap-5 ">
+                        <div className="flex">
+                            <Bed className="mr-2"/>
+                            <p>2</p>
+                        </div>
+                        <div className="flex border-black border-r-1.5">
+                            <Shower className="mr-2"/>
+                            <p className="pr-5">1</p>
+                        </div>
+                        <div>
+                            <p>75 m²</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

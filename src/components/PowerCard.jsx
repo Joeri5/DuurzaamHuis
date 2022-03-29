@@ -2,10 +2,11 @@ import {Add} from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton"
 
 import Chart from "../assets/chart.svg";
+import Card from "./Card";
 
 function PowerCard() {
     return (
-        <div className="w-8/25 h-52 bg-pink-lady-500 rounded-3xl flex justify-evenly">
+        <Card background="bg-pink-lady-500">
             <div className="py-3 flex flex-col">
                 <p className="pt-3 text-gray-700 mb-2">Power Usage</p>
                 <h3 className="font-medium text-5xl mb-2">10kWh</h3>
@@ -16,7 +17,7 @@ function PowerCard() {
                     <Add fontSize="large" color="black" />
                 </IconButton>
             </div>
-        </div>
+        </Card>
     )
 }
 

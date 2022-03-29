@@ -1,10 +1,10 @@
-import Chart from "../assets/chart.svg";
 import IconButton from "@mui/material/IconButton";
 import {Add} from "@mui/icons-material";
+import Card from "./Card";
 
 function TempInsideCard() {
     return (
-        <div className="w-8/25 h-52 bg-fair-pink-500 rounded-3xl flex justify-evenly">
+        <Card background="bg-fair-pink-500">
             <div className="py-3 flex flex-col">
                 <p className="pt-3 text-gray-700 mb-2">Current Temperature</p>
                 <h3 className="font-medium text-5xl mb-6">Bedroom</h3>
@@ -15,7 +15,7 @@ function TempInsideCard() {
                     <Add fontSize="large" color="black" />
                 </IconButton>
             </div>
-        </div>
+        </Card>
     )
 }
 

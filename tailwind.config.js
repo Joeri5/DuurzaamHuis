@@ -22,6 +22,9 @@ module.exports = {
 			width: {
 				"8/25": "32%",
 			},
+			borderWidth: {
+				'1.5': '1.5px',
+			},
 			colors: {
 				'pink-lady': {
 					DEFAULT: '#FFF1D7',

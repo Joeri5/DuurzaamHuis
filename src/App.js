@@ -1,6 +1,8 @@
 import {Route, Routes} from "react-router-dom";
 import DashboardLayout from "./pages/layouts/DashboardLayout";
 import DashboardPage from "./pages/DashboardPage";
+import FallbackPage from "./pages/FallbackPage";
+import WeatherPage from "./pages/WeatherPage";
 
 export default function App() {
 	return (
@@ -16,7 +18,7 @@ function AuthRoutes() {
 		<Routes>
 			<Route path="/login" element={<>{/* TODO */}</>} />
 			<Route path="/register" element={<>{/* TODO */}</>} />
-			<Route path="/*" element={<>{/* TODO: Fallback 404 */}</>} />
+			<Route path="/*" element={<>{/* TODO: FallbackPage 404 */}</>} />
 		</Routes>
 	)
 }
@@ -26,11 +28,11 @@ function DashboardRoutes() {
 		<DashboardLayout>
 			<Routes>
 				<Route path="/" element={<DashboardPage/>} />
-				<Route path="/weather" element={<>{/* TODO */}</>} />
+				<Route path="/weather" element={<WeatherPage />} />
 				<Route path="/power" element={<>{/* TODO */}</>} />
 				<Route path="/calculator" element={<>{/* TODO */}</>} />
 				<Route path="/lights" element={<>{/* TODO */}</>} />
-				<Route path="/*" element={<>{/* TODO: Fallback 404 */}</>} />
+				<Route path="/*" element={<FallbackPage />} />
 			</Routes>
 		</DashboardLayout>
 	)

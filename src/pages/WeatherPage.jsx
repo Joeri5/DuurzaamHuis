@@ -10,6 +10,8 @@ import CloudyWeather from "../assets/cloudy-weather.webp";
 import SunnyCloud from "../assets/sunny-cloud.webp";
 
 const WeatherPage = () => {
+
+
     return (
         <div className="px-6 flex flex-col justify-between py-12 h-screen">
             <div>
@@ -18,10 +20,21 @@ const WeatherPage = () => {
             </div>
             <div className="grid grid-cols-2">
                 <img src={Sun} alt=""/>
-                <div>
-                    <p>14</p>
-                    <div>
-                        <p>cke jkf</p>
+                <div className="text-center">
+                    <p className="text-9xl py-10 text-celadon-500">14℃</p>
+                    <div className="grid grid-cols-3">
+                        <div>
+                            <p className="text-2xl opacity-60">Wind Now</p>
+                            <p className="text-3xl py-2">12 <span className="text-lg">km/h</span></p>
+                        </div>
+                        <div>
+                            <p className="text-2xl opacity-60">Humidity</p>
+                            <p className="text-3xl py-2">54%</p>
+                        </div>
+                        <div>
+                            <p className="text-2xl opacity-60">Precipitation</p>
+                            <p className="text-3xl py-2">32%</p>
+                        </div>
                     </div>
                 </div>
             </div>

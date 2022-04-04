@@ -1,4 +1,3 @@
-import { Bed, Circle, Shower } from "@mui/icons-material";
 import type { NextPage } from "next";
 import {
   PowerCard,
@@ -10,52 +9,43 @@ import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
-    <div className="px-6 flex flex-col justify-between py-10 h-screen">
+    <div className="px-6 flex flex-col gap-y-5 py-10 h-screen">
       <div>
-        <h1 className="font-bold text-5xl">House Dashboard</h1>
-        <p className="font-normal text-gray-500 text-3xl">Welcome, Joeri!</p>
+        <p className="font-normal text-3xl">Welcome, Joeri!</p>
       </div>
-      <div className="grid grid-cols-3  gap-x-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
         <PowerCard />
         <TemperatureOutsideCard />
         <TemperatureInsideCard />
       </div>
       <div>
-        <p className="justify-evenly font-medium text-xl">Property</p>
+        <p className="font-medium text-xl">Property</p>
+
         <iframe
-          src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_MAPS_API}&q=1814BD+Alkmaar,+Netherlands&zoom=18&maptype=roadmap`}
+          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD0OLtCUN5fxsFZKZEFduOHbVeE17wcCAA&q=1814BD+Alkmaar,+Netherlands&zoom=18&maptype=roadmap`}
           className="w-full rounded-3xl h-64 my-3"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer"
         ></iframe>
-        <div className="flex" style={{ alignItems: "center" }}>
-          <Image
-            layout="raw"
-            className="md:w-20"
-            src={House}
-            alt="image of house"
-          />
-          <div className="px-5 mr-64">
-            <p className="font-semibold">Name of House</p>
-            <p>Landstraat 65, 1814BD Alkmaar</p>
-          </div>
-          <div className="flex mr-80">
-            <Circle htmlColor="#87C754" className="my-1.5 mx-2" />
-            <p className="font-light">active</p>
-          </div>
-          <div className="flex gap-5 ">
-            <div className="flex">
-              <Bed className="mr-2" />
-              <p>2</p>
-            </div>
-            <div className="flex border-black border-r-1.5">
-              <Shower className="mr-2" />
-              <p className="pr-5">1</p>
-            </div>
+
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-x-3">
+            <Image
+              layout="fixed"
+              width={80}
+              height={80}
+              src={House}
+              alt="image of house"
+            />
             <div>
-              <p>75 m²</p>
+              <p className="font-semibold">Name of House</p>
+              <p>Landstraat 65, 1814BD Alkmaar</p>
             </div>
+          </div>
+          <div className="flex items-center mr-80">
+            <span className="my-1.5 mx-2 w-4 h-4 rounded-full bg-green-400"></span>
+            <p className="font-light">active</p>
           </div>
         </div>
       </div>

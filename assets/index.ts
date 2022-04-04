@@ -1,4 +1,22 @@
 import Chart from "./chart.svg";
 import House from "./house.png";
 
-export { Chart, House };
+import DashboardIcon from "./dashboard.svg";
+import PowerIcon from "./lightning-2.svg";
+import CalculatorIcon from "./calculator.svg";
+import LightsIcon from "./adjust.svg";
+import SunIcon from "./sun.svg";
+import HouseIcon from "./house-1.svg";
+import UnknownUserIcon from "./unknown-user.png";
+
+export {
+  Chart,
+  House,
+  DashboardIcon,
+  PowerIcon,
+  CalculatorIcon,
+  LightsIcon,
+  SunIcon,
+  HouseIcon,
+  UnknownUserIcon,
+};

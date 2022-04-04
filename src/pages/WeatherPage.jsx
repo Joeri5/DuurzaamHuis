@@ -1,13 +1,13 @@
 import React from 'react';
 import Sun from "../assets/sunny-day.png"
 import WeatherCard from "../components/WeatherCard";
-import SnowWithCloud from "../assets/snow-with-cloud.svg";
-import ThunderWithRain from "../assets/thunder-with-rain.svg";
-import RainInSunnyWeather from "../assets/rain-in-sunny-weather.svg";
-import HeavyWinds from "../assets/heavy-winds.svg";
-import SunnyDay from "../assets/sunny-day2.svg";
-import CloudyWeather from "../assets/cloudy-weather.svg";
-import SunnyCloud from "../assets/sunny-cloud.svg";
+import SnowWithCloud from "../assets/snow-with-cloud.webp";
+import ThunderWithRain from "../assets/thunder-with-rain.webp";
+import RainInSunnyWeather from "../assets/rain-in-sunny-weather.webp";
+import HeavyWinds from "../assets/heavy-winds.webp";
+import SunnyDay from "../assets/sunny-day2.webp";
+import CloudyWeather from "../assets/cloudy-weather.webp";
+import SunnyCloud from "../assets/sunny-cloud.webp";
 
 const WeatherPage = () => {
     return (

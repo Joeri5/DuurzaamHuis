@@ -12,9 +12,10 @@ import UnknownUserIcon from "../assets/unknown-user.png";
 
 import {divWithClasses, imageWithClasses, spanWithClasses} from "./Element";
 import {Link, useLocation} from "react-router-dom";
+import React from "react";
 
 const Bar = divWithClasses("h-screen", "w-80", "fixed", "flex")
-const BarContainer = divWithClasses("px-6", "h-full", "flex", "flex-col", "justify-between", "items-center")
+const BarContainer = divWithClasses("invisible", "xl:visible","px-6", "h-full", "flex", "flex-col", "justify-between", "items-center")
 const BarSubContainer = divWithClasses("flex", "flex-col", "items-center")
 
 const BarTitleIcon = imageWithClasses("w-20", "h-20", "absolute")

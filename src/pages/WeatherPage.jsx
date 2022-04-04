@@ -1,5 +1,5 @@
 import React from 'react';
-import Sun from "../assets/sunny-day.png"
+import Sun from "../assets/sunny-day.webp"
 import WeatherCard from "../components/WeatherCard";
 import SnowWithCloud from "../assets/snow-with-cloud.webp";
 import ThunderWithRain from "../assets/thunder-with-rain.webp";

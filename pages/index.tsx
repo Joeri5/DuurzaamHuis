@@ -15,7 +15,9 @@ const Home: NextPage = () => {
   return (
     <div className="px-6 flex flex-col justify-evenly py-10 h-screen">
       <div>
-        <p className="font-normal text-3xl">Welcome, {user!.displayName!}!</p>
+        <p className="font-normal text-3xl">
+          Welcome, {user?.displayName || "Loading..."}!
+        </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
         <PowerCard />

@@ -23,3 +23,11 @@ export interface IWeatherAPIResult {
   error: boolean;
   data: IWeatherDay[];
 }
+
+export interface ILocationResult {
+  error: boolean;
+  data: ?{
+    temperature: number;
+    location: string;
+  };
+}

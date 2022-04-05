@@ -8,9 +8,11 @@ import { House } from "../assets";
 import Image from "next/image";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../lib/firebase";
+import { useCoords } from "../hooks/coords";
 
 const Home: NextPage = () => {
   const [user, loading] = useAuthState(auth);
+  const [lat, lon] = useCoords();
 
   return (
     <div className="px-6 flex flex-col justify-evenly py-10 h-screen">
@@ -25,10 +27,10 @@ const Home: NextPage = () => {
         <TemperatureInsideCard />
       </div>
       <div>
-        <p className="font-medium text-xl">Property</p>
+        <p className="font-medium text-xl">Your location</p>
 
         <iframe
-          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD0OLtCUN5fxsFZKZEFduOHbVeE17wcCAA&q=1814BD+Alkmaar,+Netherlands&zoom=18&maptype=roadmap`}
+          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD0OLtCUN5fxsFZKZEFduOHbVeE17wcCAA&q=${lat},${lon}&zoom=14&maptype=roadmap`}
           className="w-full rounded-3xl h-64 my-3"
           allowFullScreen
           loading="lazy"

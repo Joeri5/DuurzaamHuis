@@ -1,36 +1,11 @@
 import { NextPage } from "next";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { IWeatherAPIResult } from "../typings";
+import React from "react";
+import { useWeather } from "../hooks/weather";
 
 type Props = {};
 
 const Weather: NextPage = (props: Props) => {
-  const [geoLocation, setGeoLocation] = useState([0, 0]);
-  const [weather, setWeatherData] = useState<IWeatherAPIResult | null>(null);
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        setGeoLocation([position.coords.latitude, position.coords.longitude]);
-      });
-    }
-  }, []);
-
-  useEffect(() => {
-    if (geoLocation[0] !== 0 && geoLocation[1] !== 0) {
-      axios
-        .get("/api/weather", {
-          params: {
-            lat: geoLocation[0],
-            lon: geoLocation[1],
-          },
-        })
-        .then((res) => {
-          setWeatherData(res.data);
-        });
-    }
-  }, [geoLocation]);
+  const weather = useWeather();
 
   if (weather == null) {
     return <div>Loading...</div>;

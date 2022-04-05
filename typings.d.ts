@@ -1,10 +1,21 @@
 export interface IWeatherDay {
-  temperature: number;
-  wind_speed: number;
-  precipitation: number;
+  temperature: {
+    min: number;
+    max: number;
+  };
+  wind_speed: {
+    km: number;
+    miles: number;
+  };
+  rain_expected: boolean;
+  snow_expected: boolean;
   time: {
     date: string;
-    time: string;
+    time: number;
+  };
+  astro: {
+    sunrise: string;
+    sunset: string;
   };
 }
 

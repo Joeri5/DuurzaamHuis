@@ -9,11 +9,11 @@ export default async function handler(
   const { lat, lon } = req.query;
 
   const response = await axios.get(
-    "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly",
+    "https://weatherapi-com.p.rapidapi.com/forecast.json",
     {
-      params: { lat, lon },
+      params: { q: [lat, lon].join(","), days: 3 },
       headers: {
-        "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
+        "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
         "X-RapidAPI-Key": "9f412dd59emshaa1db6c51c74e6fp180e84jsn0010d85281e3",
       },
     }
@@ -22,17 +22,29 @@ export default async function handler(
   if (response) {
     res.status(200).json({
       error: false,
-      data: response.data.data.map((day: any) => ({
-        temperature: day.temp,
-        wind_speed: Math.round(day.wind_spd * 1.60934 * 10) / 10,
-        precipitation: day.precip,
+      data: response.data.forecast.forecastday.map((day: any) => ({
+        temperature: {
+          min: day.day.mintemp_c,
+          max: day.day.maxtemp_c,
+        },
+        wind_speed: {
+          km: Math.round(day.day.maxwind_kph * 10) / 10,
+          miles: Math.round(day.day.maxwind_mph * 10) / 10,
+        },
+        rain_expected: day.day.daily_will_it_rain === 1,
+        snow_expected: day.day.daily_will_it_snow === 1,
         time: {
-          date: day.timestamp_local.split("T")[0],
-          time: day.timestamp_local.split("T")[1],
+          date: day.date,
+          time: day.date_epoch,
+        },
+        astro: {
+          sunrise: day.astro.sunrise,
+          sunset: day.astro.sunset,
         },
       })),
     });
   } else {
+    console.error("Error fetching weather data");
     res.status(500).json({ error: true, data: [] });
   }
 }

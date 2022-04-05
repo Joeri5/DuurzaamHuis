@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 
 import {
   DashboardIcon,
@@ -11,6 +13,7 @@ import {
   HouseIcon,
   UnknownUserIcon,
 } from "../assets";
+import { auth } from "../lib/firebase";
 
 type BarNavLinkProps = {
   children: React.ReactNode;
@@ -37,6 +40,9 @@ function BarNavLink({ children, to }: BarNavLinkProps) {
 type Props = {};
 
 const SideBar = (props: Props) => {
+  const router = useRouter();
+  const [user, loading] = useAuthState(auth);
+
   return (
     <div className="h-screen w-80 fixed flex">
       <div className="px-6 h-full flex flex-col justify-between items-center">
@@ -84,16 +90,28 @@ const SideBar = (props: Props) => {
             </BarNavLink>
           </div>
         </div>
-        <div className="flex flex-col items-center text-center py-16">
+        <div className="flex flex-col items-center text-center py-16 select-none">
           <Image
             layout="fixed"
-            width={16}
-            height={16}
-            src={UnknownUserIcon}
+            width={90}
+            height={90}
+            className="rounded-full"
+            src={loading ? UnknownUserIcon : user?.photoURL || UnknownUserIcon}
             alt="???"
           />
-          <span className="font-semibold mt-3">Je moeder</span>
-          <span>email</span>
+          <span className="font-semibold mt-3">
+            {loading ? "Loading..." : user?.displayName || "Loading..."}
+          </span>
+          <span>{loading ? "Loading..." : user?.email || "Loading..."}</span>
+          <button
+            onClick={() => {
+              signOut(auth);
+              router.push("/login");
+            }}
+            className="mt-5 bg-black text-white px-3 py-2 rounded-md font-medium active:bg-opacity-80 hover:bg-opacity-90 transition-colors"
+          >
+            Logout
+          </button>
         </div>
       </div>
     </div>

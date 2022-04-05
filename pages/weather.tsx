@@ -38,16 +38,30 @@ const Weather: NextPage = (props: Props) => {
 
   return (
     <div>
-      {weather.data
-        // .filter((day) => day.time.date === "2022-04-06")
-        .map((day) => (
-          <div>
-            <span>
-              Op {day.time.date} om {day.time.time} is het{" "}
-              {day.temperature > 10 ? "🥵" : "🥶"} ({day.temperature}) graden.
-            </span>
-          </div>
-        ))}
+      <table className="border-collapse border table-fixed">
+        <thead className="border-b">
+          <tr className="divide-x">
+            <th>Dag/tijd</th>
+            <th>Temperatuur (℃)</th>
+            <th>Wind snelheid</th>
+            <th>Zon op / Zon onder</th>
+          </tr>
+        </thead>
+        <tbody className="divide-x divide-y">
+          {weather.data.map((item) => (
+            <tr className="divide-x">
+              <td>{item.time.date}</td>
+              <td>
+                {item.temperature.min} (max: {item.temperature.max})
+              </td>
+              <td>{item.wind_speed.km} km/h</td>
+              <td>
+                {item.astro.sunrise} / {item.astro.sunset}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

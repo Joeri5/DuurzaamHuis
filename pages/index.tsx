@@ -6,12 +6,16 @@ import {
 } from "../components";
 import { House } from "../assets";
 import Image from "next/image";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../lib/firebase";
 
 const Home: NextPage = () => {
+  const [user, loading] = useAuthState(auth);
+
   return (
-    <div className="px-6 flex flex-col gap-y-5 py-10 h-screen">
+    <div className="px-6 flex flex-col justify-evenly py-10 h-screen">
       <div>
-        <p className="font-normal text-3xl">Welcome, Joeri!</p>
+        <p className="font-normal text-3xl">Welcome, {user!.displayName!}!</p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
         <PowerCard />

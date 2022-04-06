@@ -37,3 +37,8 @@ export interface ILocationResult {
     precipitation: number;
   };
 }
+
+export interface IAddressResult {
+  error: boolean;
+  data: string;
+}

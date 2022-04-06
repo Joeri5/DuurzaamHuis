@@ -8,11 +8,11 @@ import { House } from "../assets";
 import Image from "next/image";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../lib/firebase";
-import { useCoords } from "../hooks/coords";
+import { useAddress } from "../hooks/address";
 
 const Home: NextPage = () => {
-  const [user, loading] = useAuthState(auth);
-  const [lat, lon] = useCoords();
+  const [user] = useAuthState(auth);
+  const address = useAddress();
 
   return (
     <div className="px-6 flex flex-col justify-evenly py-10 h-screen">
@@ -30,7 +30,9 @@ const Home: NextPage = () => {
         <p className="font-medium text-xl">Your location</p>
 
         <iframe
-          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD0OLtCUN5fxsFZKZEFduOHbVeE17wcCAA&q=${lat},${lon}&zoom=14&maptype=roadmap`}
+          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD0OLtCUN5fxsFZKZEFduOHbVeE17wcCAA&q=${address?.data
+            .toString()
+            .replaceAll(" ", "+")}&zoom=14&maptype=roadmap`}
           className="w-full rounded-3xl h-64 my-3"
           allowFullScreen
           loading="lazy"
@@ -40,15 +42,21 @@ const Home: NextPage = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-x-3">
             <Image
+              className="rounded-2xl"
               layout="fixed"
               width={80}
               height={80}
-              src={House}
+              src={`http://maps.googleapis.com/maps/api/streetview?location=${address?.data
+                .toString()
+                .replaceAll(
+                  " ",
+                  "+"
+                )}&size=80x80&key=AIzaSyAX1I6tr_av6EnU2ySOCACGnZGkQtE2mho`}
               alt="image of house"
             />
             <div>
-              <p className="font-semibold">Name of House</p>
-              <p>Landstraat 65, 1814BD Alkmaar</p>
+              <p className="font-semibold">Your Residence</p>
+              <p>{address?.data.toString()}</p>
             </div>
           </div>
           <div className="flex items-center mr-80">

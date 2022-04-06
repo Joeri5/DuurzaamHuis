@@ -90,16 +90,16 @@ const SideBar = (props: Props) => {
             </BarNavLink>
           </div>
         </div>
-        <div className="flex flex-col items-center text-center py-16 select-none">
-          <Image
+        <div className="flex flex-col items-center text-center py-14 select-none">
+          {/* <Image
             layout="fixed"
             width={90}
             height={90}
             className="rounded-full"
             src={loading ? UnknownUserIcon : user?.photoURL || UnknownUserIcon}
             alt="???"
-          />
-          <span className="font-semibold mt-3">
+          /> */}
+          <span className="font-semibold mt-2 mb-2">
             {loading ? "Loading..." : user?.displayName || "Loading..."}
           </span>
           <span>{loading ? "Loading..." : user?.email || "Loading..."}</span>
@@ -108,7 +108,7 @@ const SideBar = (props: Props) => {
               signOut(auth);
               router.push("/login");
             }}
-            className="mt-5 bg-black text-white px-3 py-2 rounded-md font-medium active:bg-opacity-80 hover:bg-opacity-90 transition-colors"
+            className="mt-3 bg-black text-white px-3 py-2 rounded-md font-medium active:bg-opacity-80 hover:bg-opacity-90 transition-colors"
           >
             Logout
           </button>

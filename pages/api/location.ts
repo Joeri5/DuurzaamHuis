@@ -25,6 +25,12 @@ export default async function handler(
       data: {
         location: response.data.location.name,
         temperature: response.data.current.temp_c,
+        wind_speed: {
+          km: response.data.current.wind_kph,
+          miles: response.data.current.wind_mph,
+        },
+        humidity: response.data.current.humidity,
+        precipitation: Math.round(response.data.current.precip_mm),
       },
     });
   } else {

@@ -29,5 +29,11 @@ export interface ILocationResult {
   data: ?{
     temperature: number;
     location: string;
+    wind_speed: {
+      km: number;
+      miles: number;
+    };
+    humidity: number;
+    precipitation: number;
   };
 }

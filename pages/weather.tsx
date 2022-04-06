@@ -1,7 +1,9 @@
 import { NextPage } from "next";
+import Image from "next/image";
 import React from "react";
 import { useWeather } from "../hooks/weather";
 import { useLocation } from "../hooks/location";
+import { SunnyDay, HeavyWinds } from "../assets";
 
 type Props = {};
 
@@ -83,6 +85,20 @@ const Weather: NextPage = (props: Props) => {
         <WeatherCard image={SunnyDay} day="Friday" temp="15℃" />
         <WeatherCard image={CloudyWeather} day="Saturday" temp="12℃" />
         <WeatherCard image={SunnyCloud} day="Sunday" temp="13℃" /> */}
+        {weather.data.map((item) => (
+          <div className="flex flex-col text-center justify-center gap-0.5">
+            <p className="font-medium">{item.time.date}</p>
+            <p>
+              {item.temperature.min} ℃ (max: {item.temperature.max} ℃)
+            </p>
+            {/* <img className="w-full" src={image} alt="" /> */}
+            {item.temperature.min > 10 ? (
+              <Image src={SunnyDay} alt="Sunny Day" />
+            ) : (
+              <Image src={HeavyWinds} alt="Heavy" />
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

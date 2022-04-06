@@ -8,6 +8,8 @@ import LightsIcon from "./adjust.svg";
 import SunIcon from "./sun.svg";
 import HouseIcon from "./house-1.svg";
 import UnknownUserIcon from "./unknown-user.png";
+import SunnyDay from "./sunny-day.webp";
+import HeavyWinds from "./heavy-winds.webp";
 
 export {
   Chart,
@@ -19,4 +21,6 @@ export {
   SunIcon,
   HouseIcon,
   UnknownUserIcon,
+  SunnyDay,
+  HeavyWinds,
 };

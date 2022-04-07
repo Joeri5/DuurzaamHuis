@@ -14,6 +14,7 @@ interface StatisticOverview {
   power: Statistic[];
   water: Statistic[];
   temperature: Statistic[];
+  gas: Statistic[];
 }
 
 export function useStats() {
@@ -28,6 +29,7 @@ export function useStats() {
       const powerUpdate = [];
       const waterUpdate = [];
       const temperatureUpdate = [];
+      const gasUpdate = [];
 
       for (const key in data?.power!) {
         powerUpdate.push({
@@ -50,6 +52,13 @@ export function useStats() {
         });
       }
 
+      for (const key in data?.gas!) {
+        gasUpdate.push({
+          date: key,
+          value: data?.gas![key],
+        });
+      }
+
       powerUpdate.sort(
         (a, b) =>
           moment(a.date, "DD/MM/YYYY").unix() -
@@ -65,11 +74,17 @@ export function useStats() {
           moment(a.date, "DD/MM/YYYY").unix() -
           moment(b.date, "DD/MM/YYYY").unix()
       );
+      gasUpdate.sort(
+        (a, b) =>
+          moment(a.date, "DD/MM/YYYY").unix() -
+          moment(b.date, "DD/MM/YYYY").unix()
+      );
 
       setStatistics({
         water: waterUpdate,
         power: powerUpdate,
         temperature: temperatureUpdate,
+        gas: gasUpdate,
       });
     });
   }, []);

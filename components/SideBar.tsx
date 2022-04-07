@@ -84,10 +84,6 @@ const SideBar = (props: Props) => {
               />
               Calculator
             </BarNavLink>
-            <BarNavLink to="/lights">
-              <Image layout="fixed" width={40} height={40} src={LightsIcon} />
-              Lights
-            </BarNavLink>
           </div>
         </div>
         <div className="flex flex-col items-center text-center py-14 select-none">

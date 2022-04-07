@@ -31,7 +31,7 @@ const PowerCard = (props: Props) => {
           alt="Chart"
         />
       </div>
-      <div className="absolute top-5 right-5">
+      <div className="absolute top-5 right-5 invisible md:visible">
         <div className="w-20 h-20 bg-white rounded-full flex justify-center items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"

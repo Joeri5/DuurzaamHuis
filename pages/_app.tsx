@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../lib/firebase";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { useMediaQuery } from "react-responsive";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -19,13 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       {user ? <SideBar /> : null}
-      {user ? (
-        <div className="ml-72">
-          <Component {...pageProps} />
-        </div>
-      ) : (
+      <div className="md:ml-80">
         <Component {...pageProps} />
-      )}
+      </div>
     </>
   );
 }

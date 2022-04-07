@@ -8,13 +8,14 @@ import Image from "next/image";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../lib/firebase";
 import { useAddress } from "../hooks/address";
+import { useMediaQuery } from "react-responsive";
 
 const Home: NextPage = () => {
   const [user] = useAuthState(auth);
   const address = useAddress();
 
   return (
-    <div className="px-6 flex flex-col justify-evenly py-10 h-screen">
+    <div className="px-6 flex flex-col justify-evenly py-10 min-h-screen space-y-5">
       <div>
         <p className="font-normal text-3xl">
           Welcome, {user?.displayName || "Loading..."}!
@@ -41,7 +42,7 @@ const Home: NextPage = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-x-3">
             <Image
-              className="rounded-2xl"
+              className="rounded-2xl invisible xl:visible"
               layout="fixed"
               width={80}
               height={80}

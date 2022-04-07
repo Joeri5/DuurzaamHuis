@@ -23,6 +23,6 @@
 > > --- | --- |
 > > |Frontend|@Joeri|
 > > |Firestore|@Maiky, @Joeri|
-> > |InlogSysteem|@Maiky|
+> > |Inlog Systeem|@Maiky|
 > > |Data Ophalen uit firestore| @Maiky, @Ivar|
 > > |Responsive Maken|@Joeri, @Maiky, @Ivar|

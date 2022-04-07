@@ -1,34 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BeroepsOpdracht Duurzaam Huis
+[<img src="https://user-images.githubusercontent.com/90683013/160500414-9f71ded4-c8d2-41b0-b80e-bc1acaa6b499.png">](https://duurzaam-huis.vercel.app/) ^ Live Link
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+>Team : 
+>>* **[Joeri](https://github.com/Joeri5)**
+>>* **[Maiky](https://github.com/Maiky1304)**
+>>* **[Ivar](https://github.com/ivarosterlund)**
+>>
+>Doel : 
+>> - [ ] Power Usage data ophalen vanuit firebase firestore
+>> - [ ] Bedroom Temperature data ophalen vanuit firebase firestore
+>> - [ ] Current Temperature ophalen vanuit een api
+>> - [ ] InlogSysteem
+>> - [ ] Power Usage screen
+>> - [ ] Calculator
+>> - [ ] Light Control met api
+>>
+>Taken :
+>>|Taak |Personen |Tijdsduur|
+>>--- | --- | ---|
+>>|Frontend|@Joeri|5 uur|
+>>|Firestore|@Maiky, @Joeri| 3 uur|
+>>|InlogSysteem|@Maiky|1 uur|
+>>|Data Ophalen uit firestore| @Maiky, @Ivar| 3 uur|
+>>|Responsive Maken|@Joeri, @Maiky, @Ivar| 1 uur|
+>>|Todo|Todo|Todo|
+>>

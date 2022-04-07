@@ -71,9 +71,9 @@ const SideBar = (props: Props) => {
               <Image layout="fixed" width={40} height={40} src={SunIcon} />
               Weather
             </BarNavLink>
-            <BarNavLink to="/power">
+            <BarNavLink to="/insights">
               <Image layout="fixed" width={40} height={40} src={PowerIcon} />
-              Power
+              Insights
             </BarNavLink>
             <BarNavLink to="/calculator">
               <Image

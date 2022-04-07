@@ -4,7 +4,6 @@ import {
   TemperatureInsideCard,
   TemperatureOutsideCard,
 } from "../components";
-import { House } from "../assets";
 import Image from "next/image";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../lib/firebase";

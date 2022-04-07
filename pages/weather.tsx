@@ -13,6 +13,7 @@ import {
   FoggyWeather,
 } from "../assets";
 import { IWeatherDay } from "../typings";
+import moment from "moment";
 
 type Props = {};
 
@@ -25,7 +26,11 @@ const WeatherLayout = ({
 }) => {
   return (
     <div className="flex flex-col text-center justify-center gap-0.5">
-      <p className="font-medium">{item.time.date}</p>
+      {moment(item.time.date).weekday() === moment().weekday() ? (
+        <p className="font-medium">Today</p>
+      ) : (
+        <p className="font-medium">{moment(item.time.date).format("dddd")}</p>
+      )}
       <p>
         {item.temperature.min} ℃ (max: {item.temperature.max} ℃)
       </p>

@@ -19,7 +19,8 @@
     "react-chartjs-2": "^4.0.1",
     "react-dom": "18.0.0",
     "react-firebase-hooks": "^5.0.3",
-    "react-geocode": "^0.2.3"
+    "react-geocode": "^0.2.3",
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "@types/node": "17.0.23",

@@ -6,12 +6,10 @@ import { signOut } from "firebase/auth";
 
 import {
   DashboardIcon,
-  PowerIcon,
+  ChartIcon,
   CalculatorIcon,
-  LightsIcon,
   SunIcon,
   HouseIcon,
-  UnknownUserIcon,
 } from "../assets";
 import { auth } from "../lib/firebase";
 
@@ -72,7 +70,7 @@ const SideBar = (props: Props) => {
               Weather
             </BarNavLink>
             <BarNavLink to="/insights">
-              <Image layout="fixed" width={40} height={40} src={PowerIcon} />
+              <Image layout="fixed" width={40} height={40} src={ChartIcon} />
               Insights
             </BarNavLink>
             <BarNavLink to="/calculator">
@@ -87,14 +85,6 @@ const SideBar = (props: Props) => {
           </div>
         </div>
         <div className="flex flex-col items-center text-center py-14 select-none">
-          {/* <Image
-            layout="fixed"
-            width={90}
-            height={90}
-            className="rounded-full"
-            src={loading ? UnknownUserIcon : user?.photoURL || UnknownUserIcon}
-            alt="???"
-          /> */}
           <span className="font-semibold mt-2 mb-2">
             {loading ? "Loading..." : user?.displayName || "Loading..."}
           </span>

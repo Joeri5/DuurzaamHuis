@@ -14,6 +14,8 @@ import {
 } from "../assets";
 import { IWeatherDay } from "../typings";
 import moment from "moment";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../lib/firebase";
 
 type Props = {};
 
@@ -130,6 +132,7 @@ const WeatherCard = ({ data }: { data: IWeatherDay }) => {
 };
 
 const Weather: NextPage = (props: Props) => {
+  const [user] = useAuthState(auth);
   const weather = useWeather();
   const location = useLocation();
 
@@ -138,36 +141,11 @@ const Weather: NextPage = (props: Props) => {
   }
 
   return (
-    // <div>
-    //   <table className="border-collapse border table-fixed">
-    //     <thead className="border-b">
-    //       <tr className="divide-x">
-    //         <th>Dag/tijd</th>
-    //         <th>Temperatuur (℃)</th>
-    //         <th>Wind snelheid</th>
-    //         <th>Zon op / Zon onder</th>
-    //       </tr>
-    //     </thead>
-    //     <tbody className="divide-x divide-y">
-    //       {weather.data.map((item) => (
-    //         <tr className="divide-x">
-    //           <td>{item.time.date}</td>
-    //           <td>
-    //             {item.temperature.min} (max: {item.temperature.max})
-    //           </td>
-    //           <td>{item.wind_speed.km} km/h</td>
-    //           <td>
-    //             {item.astro.sunrise} / {item.astro.sunset}
-    //           </td>
-    //         </tr>
-    //       ))}
-    //     </tbody>
-    //   </table>
-    // </div>
     <div className="px-6 flex flex-col justify-between py-12 h-screen">
       <div>
-        <h1 className="font-bold text-5xl">House Dashboard</h1>
-        <p className="font-normal text-gray-500 text-3xl">Welcome, Joeri!</p>
+        <p className="font-normal text-gray-500 text-3xl">
+          Keep yourself warm, {user?.displayName?.split(" ")[0]}!
+        </p>
       </div>
       <div className="grid grid-cols-2">
         {/* <Image src={SunnyDay} alt="" /> */}

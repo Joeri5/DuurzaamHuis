@@ -15,8 +15,8 @@ import ThunderRain from "./thunder-with-rain.webp";
 import CloudyWeather from "./cloudy-weather.webp";
 import SnowWithCloud from "./snow-with-cloud.webp";
 import FoggyWeather from "./foggy-weather.webp";
-import DayTime from "./sunny-day.webp";
 import Moon from "./moon.webp";
+import ChartIcon from "./chart-1.svg";
 
 export {
   Chart,
@@ -36,4 +36,5 @@ export {
   SnowWithCloud,
   FoggyWeather,
   Moon,
+  ChartIcon,
 };

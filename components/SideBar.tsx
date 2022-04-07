@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 
@@ -10,6 +10,7 @@ import {
   CalculatorIcon,
   SunIcon,
   HouseIcon,
+  HamburgerIcon,
 } from "../assets";
 import { auth } from "../lib/firebase";
 import { motion } from "framer-motion";
@@ -52,14 +53,22 @@ const SideBar = (props: Props) => {
 
   const [isOpen, setIsOpen] = React.useState(false);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
+
   return (
     <>
       {!isOpen && (
         <button
-          className="absolute top-5 right-5 md:hidden z-20"
+          className="absolute top-5 right-5 md:hidden z-20 bg-black h-12 w-12 flex justify-center items-center rounded-md"
           onClick={() => setIsOpen(!isOpen)}
         >
-          Toggle menu
+          <Image src={HamburgerIcon} layout="fixed" height={32} width={32} />
         </button>
       )}
 

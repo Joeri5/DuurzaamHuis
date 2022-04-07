@@ -17,6 +17,7 @@ import SnowWithCloud from "./snow-with-cloud.webp";
 import FoggyWeather from "./foggy-weather.webp";
 import Moon from "./moon.webp";
 import ChartIcon from "./chart-1.svg";
+import HamburgerIcon from "./hamburger.svg";
 
 export {
   Chart,
@@ -37,4 +38,5 @@ export {
   FoggyWeather,
   Moon,
   ChartIcon,
+  HamburgerIcon,
 };

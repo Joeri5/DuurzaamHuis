@@ -149,14 +149,16 @@ const Weather: NextPage = (props: Props) => {
       </div>
       <div className="grid grid-cols-2">
         {/* <Image src={SunnyDay} alt="" /> */}
-        {location != null &&
-        location.data != null &&
-        location.data.temperature > 10 ? (
-          <Image src={SunnyDay} />
-        ) : (
-          <Image src={FoggyWeather} />
-        )}
-        <div className="text-center">
+        <div className="hidden xl:block">
+          {location != null &&
+          location.data != null &&
+          location.data.temperature > 10 ? (
+            <Image className="hidden" src={SunnyDay} />
+          ) : (
+            <Image className="hidden" src={FoggyWeather} />
+          )}
+        </div>
+        <div className="text-center mx-auto col-span-2 xl:col-auto">
           <p className="text-9xl py-10 text-celadon-500">
             {location == null ? "Loading..." : location.data?.temperature}℃
           </p>

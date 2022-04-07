@@ -30,10 +30,8 @@ const Insights: NextPage = (props: Props) => {
     return <div>Loading...</div>;
   }
 
-  console.log(data);
-
   return (
-    <div className="p-5 grid grid-cols-2 gap-5">
+    <div className="p-5 grid grid-cols-1 xl:grid-cols-2 gap-5">
       <div className="p-5 shadow-lg rounded-2xl space-y-5 bg-[#fff]">
         <h2 className="font-semibold text-2xl">Power Usage</h2>
         <Line

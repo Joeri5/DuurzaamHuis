@@ -3,17 +3,34 @@ import React from "react";
 
 type Props = {};
 
+type CalculatorType = "annual" | "monthly";
+
 const Calculator: NextPage = (props: Props) => {
+  const [calculatorType, setCalculatorType] =
+    React.useState<CalculatorType>("annual");
+
   return (
     <div className="p-5 grid grid-cols-2 gap-5">
       <div className="p-5 shadow-lg rounded-2xl">
         <div className="flex my-5 justify-between">
           <h2 className="">Calculate power usage cost</h2>
           <div className="flex bg-gray-200 rounded-xl">
-            <button className="px-2 py-1 text-white bg-gray-400 rounded-xl">
-              Annualy
+            <button
+              onClick={() => setCalculatorType("annual")}
+              className={`px-2 py-1 rounded-xl${
+                calculatorType === "annual" && " bg-gray-400 text-white"
+              }`}
+            >
+              Annual
             </button>
-            <button className="px-2 py-1">Monthly</button>
+            <button
+              onClick={() => setCalculatorType("monthly")}
+              className={`px-2 py-1 rounded-xl${
+                calculatorType === "monthly" && " bg-gray-400 text-white"
+              }`}
+            >
+              Monthly
+            </button>
           </div>
         </div>
         <div className="flex justify-between align-middle">

@@ -10,6 +10,13 @@ import HouseIcon from "./house-1.svg";
 import UnknownUserIcon from "./unknown-user.png";
 import SunnyDay from "./sunny-day.webp";
 import HeavyWinds from "./heavy-winds.webp";
+import RainyDay from "./rain-in-sunny-weather.webp";
+import ThunderRain from "./thunder-with-rain.webp";
+import CloudyWeather from "./cloudy-weather.webp";
+import SnowWithCloud from "./snow-with-cloud.webp";
+import FoggyWeather from "./foggy-weather.webp";
+import DayTime from "./sunny-day.webp";
+import Moon from "./moon.webp";
 
 export {
   Chart,
@@ -23,4 +30,10 @@ export {
   UnknownUserIcon,
   SunnyDay,
   HeavyWinds,
+  RainyDay,
+  ThunderRain,
+  CloudyWeather,
+  SnowWithCloud,
+  FoggyWeather,
+  Moon,
 };

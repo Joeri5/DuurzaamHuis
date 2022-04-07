@@ -10,7 +10,7 @@ const Calculator: NextPage = (props: Props) => {
     React.useState<CalculatorType>("annual");
 
   return (
-    <div className="p-5 grid grid-cols-2 gap-5">
+    <div className="p-5 grid grid-cols-1 gap-5 mr-10">
       <div className="p-5 shadow-lg rounded-2xl">
         <div className="flex my-5 justify-between">
           <h2 className="">Calculate power usage cost</h2>

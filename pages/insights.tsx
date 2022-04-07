@@ -10,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { usePowerData } from "../hooks/firebase/powerdata";
+import { useStats } from "../hooks/firebase/stats";
 
 ChartJS.register(
   CategoryScale,
@@ -24,11 +24,13 @@ ChartJS.register(
 type Props = {};
 
 const Insights: NextPage = (props: Props) => {
-  const data = usePowerData();
+  const data = useStats();
 
   if (data == null) {
     return <div>Loading...</div>;
   }
+
+  console.log(data);
 
   return (
     <div className="p-5 grid grid-cols-2 gap-5">
@@ -44,11 +46,11 @@ const Insights: NextPage = (props: Props) => {
             },
           }}
           data={{
-            labels: Object.values(data).map((o) => o.date),
+            labels: Object.values(data.power).map((o) => o.date),
             datasets: [
               {
                 label: "Usage in kWh",
-                data: Object.values(data).map((o) => o.value),
+                data: Object.values(data.power).map((o) => o.value),
                 borderColor: "#FFD124",
                 backgroundColor: "#ffe379",
               },
@@ -57,7 +59,7 @@ const Insights: NextPage = (props: Props) => {
         />
       </div>
       <div className="p-5 shadow-lg rounded-2xl space-y-5 bg-[#fff]">
-        <h2 className="font-semibold text-2xl">Power Usage</h2>
+        <h2 className="font-semibold text-2xl">Water Usage</h2>
         <Line
           options={{
             responsive: true,
@@ -68,20 +70,28 @@ const Insights: NextPage = (props: Props) => {
             },
           }}
           data={{
-            labels: Object.values(data).map((o) => o.date),
+            labels: Object.values(data.water).map((o) => o.date),
             datasets: [
               {
-                label: "Usage in kWh",
-                data: Object.values(data).map((o) => o.value),
-                borderColor: "#FFD124",
-                backgroundColor: "#ffe379",
+                label: "Usage in m³",
+                data: Object.values(data.water).map((o) => o.value),
+                borderColor: "#30AADD",
+                backgroundColor: "#30AADD",
+                showLine: true,
+              },
+              {
+                label: "Avg household",
+                hidden: true,
+                data: [3.3, 3.2, 3.1, 3.4, 3.3, 3.2, 3.1],
+                backgroundColor: "#c2e6f5",
+                borderColor: "#c2e6f5",
               },
             ],
           }}
         />
       </div>
       <div className="p-5 shadow-lg rounded-2xl space-y-5 bg-[#fff]">
-        <h2 className="font-semibold text-2xl">Power Usage</h2>
+        <h2 className="font-semibold text-2xl">Temperature Avg</h2>
         <Line
           options={{
             responsive: true,
@@ -92,13 +102,13 @@ const Insights: NextPage = (props: Props) => {
             },
           }}
           data={{
-            labels: Object.values(data).map((o) => o.date),
+            labels: Object.values(data.temperature).map((o) => o.date),
             datasets: [
               {
-                label: "Usage in kWh",
-                data: Object.values(data).map((o) => o.value),
-                borderColor: "#FFD124",
-                backgroundColor: "#ffe379",
+                label: "Temperature in °C",
+                data: Object.values(data.temperature.map((o) => o.value)),
+                borderColor: "#FF5F00",
+                backgroundColor: "#ff9455",
               },
             ],
           }}

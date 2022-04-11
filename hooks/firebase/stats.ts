@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { firestore } from "../../lib/firebase";
-import { getDoc, doc, onSnapshot } from "firebase/firestore";
+import { doc, onSnapshot } from "firebase/firestore";
 import moment from "moment";
-import { blob } from "node:stream/consumers";
 
 interface Statistic {
   date: string;

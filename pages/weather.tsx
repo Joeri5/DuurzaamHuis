@@ -128,7 +128,19 @@ const WeatherCard = ({ data }: { data: IWeatherDay }) => {
     );
   }
 
-  return <WeatherLayout item={data} />;
+  return (
+    <WeatherLayout item={data}>
+      <div className="mx-auto">
+        <Image
+          src={SunnyDay}
+          layout="fixed"
+          height={70}
+          width={140}
+          alt="Rain expected"
+        />
+      </div>
+    </WeatherLayout>
+  );
 };
 
 const Weather: NextPage = (props: Props) => {

@@ -17,10 +17,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [user, loading]);
 
+  console.log(router.pathname);
+
   return (
     <>
       {user ? <SideBar /> : null}
-      <div className="md:ml-80">
+      <div className={router.pathname !== "/login" ? "md:ml-80" : ""}>
         <Component {...pageProps} />
       </div>
     </>

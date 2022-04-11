@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     if (!user && !loading) {
       router.push("/login");
     }
-  }, [user, loading]);
+  }, [user, loading, router]);
 
   console.log(router.pathname);
 

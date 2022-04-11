@@ -68,7 +68,13 @@ const SideBar = (props: Props) => {
           className="absolute top-5 right-5 md:hidden z-20 bg-black h-12 w-12 flex justify-center items-center rounded-md"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <Image src={HamburgerIcon} layout="fixed" height={32} width={32} />
+          <Image
+            src={HamburgerIcon}
+            layout="fixed"
+            height={32}
+            width={32}
+            alt="Show menu"
+          />
         </button>
       )}
 
@@ -89,15 +95,28 @@ const SideBar = (props: Props) => {
                 width={40}
                 height={40}
                 src={DashboardIcon}
+                alt="Dashboard"
               />
               Dashboard
             </BarNavLink>
             <BarNavLink ignoreColor to="/weather">
-              <Image layout="fixed" width={40} height={40} src={SunIcon} />
+              <Image
+                layout="fixed"
+                width={40}
+                height={40}
+                src={SunIcon}
+                alt="Weather"
+              />
               Weather
             </BarNavLink>
             <BarNavLink ignoreColor to="/insights">
-              <Image layout="fixed" width={40} height={40} src={ChartIcon} />
+              <Image
+                layout="fixed"
+                width={40}
+                height={40}
+                src={ChartIcon}
+                alt="Chart"
+              />
               Insights
             </BarNavLink>
             <BarNavLink ignoreColor to="/calculator">
@@ -106,6 +125,7 @@ const SideBar = (props: Props) => {
                 width={40}
                 height={40}
                 src={CalculatorIcon}
+                alt="Calculator"
               />
               Calculator
             </BarNavLink>
@@ -123,6 +143,7 @@ const SideBar = (props: Props) => {
                 src={HouseIcon}
                 height={80}
                 width={80}
+                alt="Duurzaam"
               />
               <h1 className="relative mt-8 -ml-5">House</h1>
             </div>
@@ -133,15 +154,28 @@ const SideBar = (props: Props) => {
                   width={40}
                   height={40}
                   src={DashboardIcon}
+                  alt="Dashboard"
                 />
                 Dashboard
               </BarNavLink>
               <BarNavLink to="/weather">
-                <Image layout="fixed" width={40} height={40} src={SunIcon} />
+                <Image
+                  layout="fixed"
+                  width={40}
+                  height={40}
+                  src={SunIcon}
+                  alt="Weather"
+                />
                 Weather
               </BarNavLink>
               <BarNavLink to="/insights">
-                <Image layout="fixed" width={40} height={40} src={ChartIcon} />
+                <Image
+                  layout="fixed"
+                  width={40}
+                  height={40}
+                  src={ChartIcon}
+                  alt="Chart"
+                />
                 Insights
               </BarNavLink>
               <BarNavLink to="/calculator">
@@ -150,6 +184,7 @@ const SideBar = (props: Props) => {
                   width={40}
                   height={40}
                   src={CalculatorIcon}
+                  alt="Calculator"
                 />
                 Calculator
               </BarNavLink>

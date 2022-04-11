@@ -165,9 +165,9 @@ const Weather: NextPage = (props: Props) => {
           {location != null &&
           location.data != null &&
           location.data.temperature > 10 ? (
-            <Image className="hidden" src={SunnyDay} />
+            <Image className="hidden" src={SunnyDay} alt="Zonnig" />
           ) : (
-            <Image className="hidden" src={FoggyWeather} />
+            <Image className="hidden" src={FoggyWeather} alt="Bewolkt" />
           )}
         </div>
         <div className="text-center mx-auto col-span-2 xl:col-auto">
@@ -199,8 +199,8 @@ const Weather: NextPage = (props: Props) => {
         </div>
       </div>
       <div className="grid grid-cols-3 ">
-        {weather.data.map((item) => (
-          <WeatherCard data={item} />
+        {weather.data.map((item, index) => (
+          <WeatherCard key={index} data={item} />
         ))}
       </div>
     </div>

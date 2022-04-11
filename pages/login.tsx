@@ -22,7 +22,7 @@ const Login: NextPage = (props: Props) => {
     if (user && !loading) {
       router.push("/");
     }
-  }, [user, loading]);
+  }, [user, loading, router]);
 
   return (
     <div className="w-screen h-screen flex gap-x-3 justify-center items-center">
